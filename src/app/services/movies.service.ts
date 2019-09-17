@@ -17,4 +17,16 @@ export class MoviesService {
     return this.httpClient.get(url, { params });
   }
 
+  getSimilar(id: number): Observable<any>{
+    const params = new HttpParams().set('api_key', this.apiKey);
+    const url = this.baseUrl + id + '/similar';
+    return this.httpClient.get(url, { params });
+  }
+
+  getVideos(id: number): Observable<any>{
+    const params = new HttpParams().set('api_key', this.apiKey);
+    const url = this.baseUrl + id + '/videos';
+    return this.httpClient.get(url, {params});
+  }
+
 }
