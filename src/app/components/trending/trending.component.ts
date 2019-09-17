@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TrendingService } from 'src/app/services/trending.service';
+import { Trending } from 'src/app/interfaces/trending';
 
 @Component({
   selector: 'app-trending',
@@ -7,15 +8,16 @@ import { TrendingService } from 'src/app/services/trending.service';
   styleUrls: ['./trending.component.scss']
 })
 export class TrendingComponent implements OnInit {
-  trending = [];
+  trending: Trending[] = [];
 
   constructor(private trendingService: TrendingService) { }
 
   ngOnInit() {
-    this.trendingService.getTrendingDay().subscribe(res => {
-      this.trending = res.results;
-    }, err => {
-      console.log(err);
+    this.trendingService.getTrendingDay().subscribe((res: any) => {
+      const data = res.results;
+      data.forEach(element => {
+        this.trending.push(element);
+      });
     });
   }
 

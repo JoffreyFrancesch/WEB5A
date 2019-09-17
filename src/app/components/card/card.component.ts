@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Trending } from 'src/app/interfaces/trending';
 
 @Component({
   selector: 'app-card',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() item: {};
+  @Input() item: Trending;
 
   constructor() { }
 

@@ -1,0 +1,21 @@
+<div class=row style="text-align: center; margin-top: 100px">
+    <div *ngFor="let movie of similar | slice:0:5 " class="col">
+        <div class="img-container">
+            <img class="img-film" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto"
+                height="200px">
+            <div class="text-middle">
+                <div class="text">Voir</div>
+            </div>
+        </div>
+        <!-- <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto" height="200px"
+        [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active"> -->
+        <p class="title"> {{movie.title}}</p>
+    </div>
+</div>
+
+
+<!-- <li *ngFor='let movie of similar | slice:0:5 '>
+    {{ movie.title }}
+    <a [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active">Voir</a>
+</li> -->
+

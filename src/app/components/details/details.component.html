@@ -1,0 +1,11 @@
+<div class="movie-description" *ngIf="movie">
+    <div class="title-container">
+        <img class="img-fluid" src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">
+        <h1 class="title"> {{ movie.title }} </h1>
+    </div>
+    <p> {{ movie.overview }} </p>
+    <p *ngFor="let genre of movie.genres">{{ genre.name }}</p>
+    <app-video [id]="movie.id"></app-video>
+    <app-similar [id]="movie.id"></app-similar>
+</div>
+
