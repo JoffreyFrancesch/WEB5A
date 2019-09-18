@@ -1,11 +1,9 @@
-<div class=row style="text-align: center; margin-top: 100px">
+<h3 style="margin-top: 1em;margin-bottom: 1em;">Similar Movie :</h3>
+<div class=row style="text-align: center;">
     <div *ngFor="let movie of similar | slice:0:5 " class="col">
-        <div class="img-container">
+        <div [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active" class="img-container">
             <img class="img-film" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto"
-                height="200px">
-            <div class="text-middle">
-                <div class="text">Voir</div>
-            </div>
+                height="100px">
         </div>
         <!-- <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto" height="200px"
         [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active"> -->

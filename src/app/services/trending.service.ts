@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Trending } from '../interfaces/trending';
+import { Trending, OTrending } from '../interfaces/trending';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class TrendingService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTrendingWeek(media?: string): Observable<any> {
+  getTrendingWeek(media?: string): Observable<OTrending> {
     let url = this.baseUrl;
     if (media) {
       url += media + '/week';
@@ -20,18 +20,18 @@ export class TrendingService {
       url += '/all/week';
     }
     const params = new HttpParams().set('api_key', this.apiKey);
-    return this.httpClient.get(url, {params});
+    return this.httpClient.get<OTrending>(url, {params});
   }
 
-  getTrendingDay(media?: string): Observable<any> {
+  getTrendingDay(media?: string): Observable<OTrending> {
     let url = this.baseUrl;
     if (media) {
-       url += media + '/week';
+       url += media + '/day';
     } else {
-       url += 'all/week';
+       url += 'all/day';
     }
     const params = new HttpParams().set('api_key', this.apiKey);
-    return this.httpClient.get(url, { params });
+    return this.httpClient.get<OTrending>(url, { params });
   }
 
 }

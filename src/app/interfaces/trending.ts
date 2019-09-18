@@ -14,3 +14,10 @@ export interface Trending {
   video?: boolean;
   vote_average?: number;
 }
+
+export interface OTrending {
+  page: number;
+  results: Trending[];
+  total_pages: number;
+  total_results: number;
+}

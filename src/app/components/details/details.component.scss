@@ -1,25 +1,105 @@
-h1 {
-    padding-top: 10px;
-    font-family: 'Oswald',
-    sans-serif;
-    padding-bottom: 10px;
-}
+// h1 {
+//     padding-top: 10px;
+//     font-family: 'Oswald',
+//     sans-serif;
+//     padding-bottom: 10px;
+// }
 
-.title-container {
-    position: relative;
-    text-align: center;
-    color: white;
+// .title-container {
+//     position: relative;
+//     text-align: center;
+//     color: white;
+// }
+
+// .title {
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     letter-spacing: 5px;
+//     font-size: 3em;
+//     text-align: center;
+//     text-decoration: underline;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+.container {
+    padding: 0px;
+    margin: 0px;
 }
 
 .title {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 5px;
-    font-size: 3em;
-    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 1em;
+    letter-spacing: 0.1em; 
     text-decoration: underline;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 3em;
+}
+
+.overview {
+    font-family: 'Raleway', sans-serif;
+    text-align: justify;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+.genre {
+    display: inline;
+    color: #606060;
+    text-decoration: underline;
+    margin-right: 1em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.release {
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.production-companies-container {
+    font-family: 'Raleway',
+    sans-serif;
+
+}
+
+.production-companies-title {
+    display: inline;
+    text-transform: uppercase;
+}
+
+.production-companies-list {
+    display: inline;
+    text-transform: capitalize;
+    margin-right: 1em;
+}
+
+.production-countries-container {
+  font-family: 'Raleway',
+    sans-serif;
+}
+
+.production-countries-title {
+  display: inline;
+  text-transform: uppercase;
+}
+
+.production-countries-list {
+  display: inline;
+  text-transform: capitalize;
+  margin-right: 1em;
+}
+
+.original-language {
+  font-family: 'Raleway',  sans-serif;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+.original-title {
+  font-family: 'Raleway',
+  sans-serif;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+
 }

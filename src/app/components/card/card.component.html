@@ -1,19 +1,6 @@
-<div class="card mb-4 shadow-sm" style="height: 500px">
-    <img src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" width="100%" height="225" alt="image de {{ item.title }}">
-    <div class="card-body">
-        <h5 class="card-title">{{item.title}}</h5>
-        <p class="card-text">{{item.overview}}</p>
-    </div>
-    <div class="card-footer">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-                <a [routerLink]="['details',item.id]" [id]="item.id" routerLinkActive="router-link-active"
-                    class="btn btn-sm btn-outline-light">View</a>
-                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-            </div>
-            <small class="text-muted">
-                <app-rating [rating]="item.vote_average"></app-rating>
-            </small>
-        </div>
+<div [routerLink]="['/details',item.id]" routerLinkActive="router-link-active" class="card-movie-container" style="text-align: center">
+    <img class="card-movie-image" src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" height="auto" width="100%">
+    <div class="card-movie-middle">
+        <div class="card-movie-text">See more</div>
     </div>
 </div>

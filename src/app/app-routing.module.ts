@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DetailsComponent } from './components/details/details.component';
 import { TrendingComponent } from './components/trending/trending.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 const routes: Routes = [{
@@ -10,6 +11,9 @@ const routes: Routes = [{
 }, {
   path: '',
   component: TrendingComponent
+}, {
+  path: 'result/:query',
+  component: ResultComponent
 }];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
-import { Similar } from 'src/app/interfaces/similar';
+import { Similar, OSimilar } from 'src/app/interfaces/similar';
 
 @Component({
   selector: 'app-similar',
@@ -18,7 +18,7 @@ export class SimilarComponent implements OnInit, OnChanges {
   }
 
   loadSimilar() {
-    this.movieService.getSimilar(this.id).subscribe((res: any) => {
+    this.movieService.getSimilar(this.id).subscribe((res: OSimilar) => {
       const data = res.results;
       data.forEach(element => {
         this.similar.push(element);

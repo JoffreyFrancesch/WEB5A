@@ -1,11 +1,47 @@
 <div class="movie-description" *ngIf="movie">
-    <div class="title-container">
-        <img class="img-fluid" src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">
-        <h1 class="title"> {{ movie.title }} </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
+            </div>
+            <div class="col">
+                <div>
+                    <h1 class="title" style="display: inline"> {{ movie.title }} </h1>
+                    <button type="button" class="btn" data-toggle="modal" style="position: relative" data-target="#exampleModal">
+                        <i style="color: white" class="fa fa-play-circle fa-2x"></i>
+                    </button>
+                </div>
+
+                <p class="genre" *ngFor="let genre of movie.genres">{{genre.name}} {{ genre.id }}</p>
+                <app-rating [rating]="movie.vote_average"></app-rating><br>
+                <p class="overview"> {{movie.overview}} </p>
+                <div>
+                    <h3>Information : </h3>
+                    <p *ngIf="movie.release_date" class="release"> Released on : {{movie.release_date}}</p>
+                    <div class="production-companies-container">
+                        <p class="production-companies-title"> Production Companies : </p>
+                        <p class="production-companies-list" *ngFor="let company of movie.production_companies">{{ company.name }}</p>
+                    </div>
+                    <div class="production-countries-container">
+                        <p class="production-countries-title"> Production Countries : </p>
+                        <p class="production-countries-list" *ngFor="let country of movie.production_countries">{{ country.name }}</p>
+                    </div>
+                    <p class="original-language">Original Language : {{movie.original_language}}</p>
+                    <p class="original-title">Original Title : {{movie.original_title}}</p>
+                    <app-similar [id]="movie.id"></app-similar>
+                </div>
+            </div>
+        </div>
     </div>
-    <p> {{ movie.overview }} </p>
-    <p *ngFor="let genre of movie.genres">{{ genre.name }}</p>
-    <app-video [id]="movie.id"></app-video>
-    <app-similar [id]="movie.id"></app-similar>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: transparent; border: none;">
+            <div class="modal-body">
+                <app-video *ngIf="movie" [id]="movie.id"></app-video>
+            </div>
+        </div>
+    </div>
+</div>

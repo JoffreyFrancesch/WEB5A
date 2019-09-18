@@ -14,3 +14,10 @@ export interface Similar {
   video?: boolean;
   vote_average?: number;
 }
+
+export interface OSimilar {
+  page: number;
+  results: Similar[];
+  total_pages: number;
+  total_results: number;
+}
