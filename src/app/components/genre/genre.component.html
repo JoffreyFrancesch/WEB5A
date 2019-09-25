@@ -1,0 +1,12 @@
+<div class="album py-5">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let result of list" class="col-md-3" style="padding: 0;">
+                <app-card *ngIf="result.poster_path" [item]="result"></app-card>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align: center; margin-bottom: 20px;" >
+    <button class="btn btn-outline-light" (click)="showMore()">Show more</button>
+</div>

@@ -9,14 +9,28 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li [class.active]="router.url==='/'" class="nav-item">
                 <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">Trending <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Movies</a>
+            <li [class.active]="router.url==='/movies'" *ngIf="movieGenres" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Movies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a [routerLink]="['/movies']" routerLinkActive="router-link-active"  class="dropdown-item">See All</a>
+                    <a [routerLink]="['/movies', genre.id ]" routerLinkActive="router-link-active"  class="dropdown-item" *ngFor="let genre of movieGenres.genres">{{ genre.name }}</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">TV Shows</a>
+            <li [class.active]="router.url==='/tvshows'" *ngIf="tvGenres" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    TV Shows
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a [routerLink]="['/tvshows']" routerLinkActive="router-link-active" class="dropdown-item">See All</a>
+                    <a [routerLink]="['/tvshows', genre.id ]" routerLinkActive="router-link-active"  class="dropdown-item" *ngFor="let genre of tvGenres.genres">{{ genre.name }}</a>
+                </div>
             </li>
         </ul>
         <app-search></app-search>

@@ -22,8 +22,10 @@ export class ResultComponent implements OnInit {
         this.results = [];
         this.searchService.searchMovie(query).subscribe((res: any) => {
           const data = res.results;
-          data.forEach(element => {
-            this.results.push(element);
+          data.forEach((element: Result) => {
+            if (element.poster_path !=  null ){
+              this.results.push(element);
+            }
           });
         });
       })

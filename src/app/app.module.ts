@@ -16,6 +16,9 @@ import { SimilarComponent } from './components/similar/similar.component';
 import { VideoComponent } from './components/video/video.component';
 import { SearchComponent } from './components/search/search.component';
 import { ResultComponent } from './components/result/result.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { TvshowsComponent } from './components/tvshows/tvshows.component';
+import { GenreComponent } from './components/genre/genre.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ResultComponent } from './components/result/result.component';
     SimilarComponent,
     VideoComponent,
     SearchComponent,
-    ResultComponent
+    ResultComponent,
+    MoviesComponent,
+    TvshowsComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
