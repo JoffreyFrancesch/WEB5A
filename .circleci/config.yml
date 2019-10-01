@@ -14,16 +14,15 @@ jobs:
           paths:
             - "node_modules"
       - run: 
-        name : 'Run Unit Test'
-        command : 'xvfb-run -a npm run test -- --no-watch --no-progress --browsers=ChromeNoSandbox'
+        name : Run Unit Test
+        command : xvfb-run -a npm run test -- --no-watch --no-progress --browsers=ChromeNoSandbox
       - run: 
-        name : 'Run End 2 End Test'
-        command : 'xvfb-run -a npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js'
+        name : Run End 2 End Test
+        command : xvfb-run -a npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
       - run:
-        name: 'Build Project'
-        command : 'npm run build'
-      
+        name: Build Project
+        command : npm run build
       - run:
-        name : 'Deploy to Firebase'
-        command : './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+        name : Deploy to Firebase
+        command : ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
 
