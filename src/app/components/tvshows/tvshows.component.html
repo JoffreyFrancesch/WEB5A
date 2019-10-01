@@ -3,7 +3,7 @@
         <div class="row">
             <div *ngFor="let genre of genres" class="col-md-3" style="padding: 0;">
                 <div class="tile">
-                    <p  [routerLink]="['/tvshows', genre.id ]" routerLinkActive="router-link-active"  class="tile-text">{{ genre.name }} {{ genre.id }}</p>
+                    <p  [routerLink]="['/tvshows', genre.id ]" routerLinkActive="router-link-active"  class="tile-text">{{ genre.name }}</p>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { ResultComponent } from './components/result/result.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { TvshowsComponent } from './components/tvshows/tvshows.component';
 import { GenreComponent } from './components/genre/genre.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GenreComponent } from './components/genre/genre.component';
     ResultComponent,
     MoviesComponent,
     TvshowsComponent,
-    GenreComponent
+    GenreComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
