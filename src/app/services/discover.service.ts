@@ -7,8 +7,8 @@ import { HttpParams, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DiscoverService {
-  private apiKey = '1907085acdbf6dd186e8d57ae562a651';
-  private baseUrl = 'https://api.themoviedb.org/3/discover/';
+  readonly apiKey = '1907085acdbf6dd186e8d57ae562a651';
+  readonly baseUrl = 'https://api.themoviedb.org/3/discover/';
 
   constructor(private httpClient: HttpClient) {}
 

@@ -7,8 +7,8 @@ import { OMovieSearch } from '../interfaces/result';
   providedIn: 'root'
 })
 export class SearchService {
-  private apiKey = '1907085acdbf6dd186e8d57ae562a651';
-  private baseUrl = 'https://api.themoviedb.org/3/search';
+  readonly apiKey = '1907085acdbf6dd186e8d57ae562a651';
+  readonly baseUrl = 'https://api.themoviedb.org/3/search';
 
   constructor(private httpClient: HttpClient) { }
 

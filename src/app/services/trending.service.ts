@@ -7,8 +7,8 @@ import { Trending, OTrending } from '../interfaces/trending';
   providedIn: 'root'
 })
 export class TrendingService {
-  private apiKey = '1907085acdbf6dd186e8d57ae562a651';
-  private baseUrl = 'https://api.themoviedb.org/3/trending/';
+  readonly apiKey = '1907085acdbf6dd186e8d57ae562a651';
+  readonly baseUrl = 'https://api.themoviedb.org/3/trending/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class TrendingService {
     if (media) {
       url += media + '/week';
     } else {
-      url += '/all/week';
+      url += 'all/week';
     }
     const params = new HttpParams().set('api_key', this.apiKey);
     return this.httpClient.get<OTrending>(url, {params});

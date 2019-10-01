@@ -9,8 +9,8 @@ import { Videos } from '../interfaces/videos';
   providedIn: 'root'
 })
 export class MoviesService {
-  private apiKey = '1907085acdbf6dd186e8d57ae562a651';
-  private baseUrl = 'https://api.themoviedb.org/3/movie/';
+  readonly apiKey = '1907085acdbf6dd186e8d57ae562a651';
+  readonly baseUrl = 'https://api.themoviedb.org/3/movie/';
 
   constructor(private httpClient: HttpClient) { }
 

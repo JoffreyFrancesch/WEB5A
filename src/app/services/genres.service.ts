@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { Genres } from '../interfaces/genres';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class GenresService {
-  private apiKey = '1907085acdbf6dd186e8d57ae562a651';
-  private baseUrl = 'https://api.themoviedb.org/3/genre/';
+  readonly apiKey = '1907085acdbf6dd186e8d57ae562a651';
+  readonly baseUrl = 'https://api.themoviedb.org/3/genre/';
 
   constructor(private httpClient: HttpClient) {}
 
