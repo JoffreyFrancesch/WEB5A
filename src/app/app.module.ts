@@ -19,7 +19,6 @@ import { ResultComponent } from './components/result/result.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { TvshowsComponent } from './components/tvshows/tvshows.component';
 import { GenreComponent } from './components/genre/genre.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ResultComponent,
     MoviesComponent,
     TvshowsComponent,
-    GenreComponent,
-    PaginationComponent
+    GenreComponent
   ],
   imports: [
     BrowserModule,
