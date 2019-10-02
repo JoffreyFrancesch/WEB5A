@@ -1,0 +1,21 @@
+.page-item.active .page-link {
+  z-index: 1;
+  color: #000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.page-item.disabled .page-link {
+    background-color: transparent;
+}
+
+.page-link {
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+}
+
+.page-link:hover {
+    background-color: #fff;
+    color: #000;
+}

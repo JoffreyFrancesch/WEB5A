@@ -8,23 +8,23 @@
     </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 20px;">
-    <nav style="background: transparent !important;">
-        <ul class="pagination">
+<div>
+    <nav>
+        <ul class="pagination justify-content-center">
             <li *ngIf="currentpage === 1" class="page-item disabled">
                 <span class="page-link">Previous</span>
             </li>
             <li *ngIf="currentpage != 1" class="page-item">
-                <span class="page-link">Previous</span>
+                <span (click)="loadPage((currentpage-1))" class="page-link">Previous</span>
             </li>
 
             <li *ngIf="currentpage - 1 > 0" (click)="loadPage((currentpage-1))" class="page-item">
-                <span class="page-link">{{ currentpage - 1}}</span></li>
-            <li class="page-item active" (click)="loadPage((currentpage))"><span
-                    class="page-link">{{ currentpage }}</span>
+                <span class="page-link" >{{ currentpage - 1}}</span></li>
+            <li class="page-item active" (click)="loadPage((currentpage))">
+                <span class="page-link">{{ currentpage }}</span>
             </li>
-            <li class="page-item" (click)="loadPage((currentpage+1))"><span
-                    class="page-link">{{ currentpage + 1 }}</span>
+            <li class="page-item" (click)="loadPage((currentpage+1))">
+                <span class="page-link">{{ currentpage + 1 }}</span>
             </li>
 
             <li class="page-item">
