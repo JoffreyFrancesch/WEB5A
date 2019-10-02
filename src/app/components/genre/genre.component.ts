@@ -77,7 +77,32 @@ export class GenreComponent implements OnInit {
         });
       }
     }
+  }
 
+  loadPage(page: number) {
+    if (this.type === 'tvshows') {
+      if (page <= this.maxpage) {
+        this.list = [];
+        this.discoverService.getShowsPage(this.id, page).subscribe(res => {
+          this.currentpage = res.page;
+          this.maxpage = res.total_pages;
+          res.results.forEach(element => {
+            this.list.push(element);
+          });
+        });
+      }
+    } else if (this.type === 'movies') {
+      if (page <= this.maxpage) {
+        this.list = [];
+        this.discoverService.getMoviePage(this.id, page).subscribe(res => {
+          this.currentpage = res.page;
+          this.maxpage = res.total_pages;
+          res.results.forEach(element => {
+            this.list.push(element);
+          });
+        });
+      }
+    }
   }
 
 }

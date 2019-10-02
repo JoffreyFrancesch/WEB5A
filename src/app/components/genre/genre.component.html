@@ -7,6 +7,30 @@
         </div>
     </div>
 </div>
-<div style="text-align: center; margin-bottom: 20px;" >
-    <button class="btn btn-outline-light" (click)="showMore()">Show more</button>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <nav style="background: transparent !important;">
+        <ul class="pagination">
+            <li *ngIf="currentpage === 1" class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            <li *ngIf="currentpage != 1" class="page-item">
+                <span class="page-link">Previous</span>
+            </li>
+
+            <li *ngIf="currentpage - 1 > 0" (click)="loadPage((currentpage-1))" class="page-item">
+                <span class="page-link">{{ currentpage - 1}}</span></li>
+            <li class="page-item active" (click)="loadPage((currentpage))"><span
+                    class="page-link">{{ currentpage }}</span>
+            </li>
+            <li class="page-item" (click)="loadPage((currentpage+1))"><span
+                    class="page-link">{{ currentpage + 1 }}</span>
+            </li>
+
+            <li class="page-item">
+                <span class="page-link" (click)="loadPage((currentpage+1))">Next (total : {{ maxpage }})</span>
+            </li>
+        </ul>
+    </nav>
+    <!-- <button class="btn btn-outline-light" (click)="showMore()">Show more</button> -->
 </div>

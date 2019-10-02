@@ -36,7 +36,7 @@ export class DiscoverService {
       .set('with_genres', id.toString())
       .set('page', (page + 1).toString());
     const url = this.baseUrl + 'tv';
-    return this.httpClient.get<ODiscoverShows>(url, {params});
+    return this.httpClient.get<ODiscoverShows>(url, { params });
   }
 
   showMoreMovie(id: number, page: number): Observable<ODiscoverMovies> {
@@ -47,8 +47,25 @@ export class DiscoverService {
       .set('page', (page + 1).toString());
     const url = this.baseUrl + 'movie';
     return this.httpClient.get<ODiscoverMovies>(url, { params });
-
   }
 
+  getMoviePage(id: number, page: number): Observable<ODiscoverMovies> {
+    const params = new HttpParams()
+    .set('api_key', this.apiKey)
+    .set('sort_by', 'popularity.desc')
+    .set('with_genres', id.toString())
+    .set('page', page.toString());
+    const url = this.baseUrl + 'movie';
+    return this.httpClient.get<ODiscoverMovies>(url, {params});
+  }
 
+  getShowsPage(id: number, page: number): Observable<ODiscoverShows> {
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('sort_by', 'popularity.desc')
+      .set('with_genres', id.toString())
+      .set('page', page.toString());
+    const url = this.baseUrl + 'tv';
+    return this.httpClient.get<ODiscoverShows>(url, { params });
+  }
 }
