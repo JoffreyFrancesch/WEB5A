@@ -1,28 +1,40 @@
 [![CircleCI](https://circleci.com/gh/JoffreyFrancesch/WEB5A/tree/master.svg?style=svg)](https://circleci.com/gh/JoffreyFrancesch/WEB5A/tree/master)
-# WEB5A
+# Projet Angular 5A ESIEA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+## Lien vers le site deployé
 
-## Development server
+* [web5a.joffreyfranceschini.fr](web5a.joffreyfranceschini.fr)
+* [web5a-1b80d.firebaseapp.com](web5a-1b80d.firebaseapp.com)
+* [web5a-1b80d.web.app](web5a-1b80d.web.app)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Intégration Continue & Deploiement Continue
 
-## Code scaffolding
+Circle CI avec Firebase pour l'hébergement
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Membre du projet
 
-## Build
+* Joffrey Franceschini
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Récupération du projet en local et lancement
 
-## Running unit tests
+```shell
+###### get the repo ######
+$ git clone https://github.com/JoffreyFrancesch/WEB5A
+###### go in the right folder ######
+$ cd WEB5A
+###### install all npm dependencies ######
+$ npm install
+###### launch live development server ######
+$ ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Todo list
 
-## Running end-to-end tests
+* [x] Page d'acceuil avec tendance
+* [x] Navigation entre les pages
+* [x] Pages de genres pour film et series
+* [x] Recherche de film ou serie
+* [x] Pagination sur page par genre de film
+* [x] Circle CI
+* [x] Deploiement Firebase
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
