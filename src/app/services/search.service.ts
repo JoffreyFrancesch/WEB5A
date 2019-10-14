@@ -14,7 +14,7 @@ export class SearchService {
 
   searchMovie(query: string): Observable<OMovieSearch> {
     const params = new HttpParams().set('api_key', this.apiKey).set('query', query);
-    const url = this.baseUrl + '/movie';
+    const url = this.baseUrl + '/multi';
     return this.httpClient.get<OMovieSearch>(url, {params});
   }
 
