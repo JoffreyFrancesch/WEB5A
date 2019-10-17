@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
-import { Result, OMovieSearch } from 'src/app/interfaces/result';
+import { Result, OMovieSearch, ResultTv } from 'src/app/interfaces/result';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  results: Result[] = [];
+  results: Result[] | ResultTv[] = [];
   value = '';
 
   constructor(private searchService: SearchService, private router: Router) { }
@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   search(value: string) {
     this.results = [];
     if (value !== '') {
-      this.searchService.searchMovie(value).subscribe((res: OMovieSearch) => {
+      this.searchService.search(value).subscribe((res: OMovieSearch) => {
         const data = res.results;
         data.forEach(element => {
           this.results.push(element);

@@ -35,14 +35,14 @@ describe('SearchService', () => {
     };
 
     it('should return an Observable<OMovieSearch>', () => {
-      service.searchMovie('the godfather').subscribe(search => {
+      service.search('the godfather').subscribe(search => {
         expect(search.page).toBe(1);
         expect(search.total_pages).toBe(1);
         expect(search.total_results).toBe(0);
         expect(search.results.length).toBe(0);
       });
 
-      const req = httpMock.expectOne(`${service.baseUrl}/movie?api_key=${service.apiKey}&query=the%20godfather`);
+      const req = httpMock.expectOne(`${service.baseUrl}/multi?api_key=${service.apiKey}&query=the%20godfather`);
       expect(req.request.method).toBe('GET');
       req.flush(dummySearch);
     });
