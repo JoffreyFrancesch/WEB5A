@@ -30,8 +30,11 @@ export class SearchComponent implements OnInit {
   }
 
   onEnter(value: string) {
-    this.value = '';
     this.router.navigate(['result', value]);
+  }
+
+  onClickSearch() {
+    this.router.navigate(['result', this.value]);
   }
 
 }

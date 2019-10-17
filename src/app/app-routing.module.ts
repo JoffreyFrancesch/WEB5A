@@ -9,9 +9,10 @@ import { GenreComponent } from './components/genre/genre.component';
 
 
 const routes: Routes = [{
-  path: 'details/:id',
+  path: 'details/:type/:id',
   component: DetailsComponent
-}, {
+},
+{
   path: '',
   component: TrendingComponent
 }, {

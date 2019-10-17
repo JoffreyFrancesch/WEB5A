@@ -3,6 +3,6 @@
     <datalist *ngIf="results !== []" id="results">
         <option *ngFor="let result of results">{{result.title}}</option>
     </datalist>
-    <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="onClickSearch()" >Search</button>
 </div>
 

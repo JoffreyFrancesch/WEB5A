@@ -1,4 +1,4 @@
-<div [routerLink]="['/details',item.id]" routerLinkActive="router-link-active" class="card-movie-container" style="text-align: center">
+<div [routerLink]="['/details',item.type, item.id]" routerLinkActive="router-link-active" class="card-movie-container" style="text-align: center">
     <img class="card-movie-image" src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" height="auto" width="100%">
     <div class="card-movie-middle">
         <div class="card-movie-text">See more</div>

@@ -1,13 +1,14 @@
-<h3 style="margin-top: 1em;margin-bottom: 1em;">Similar Movie :</h3>
+<h3 style="margin-top: 1em;margin-bottom: 1em;">Similar :</h3>
 <div class=row style="text-align: center;">
-    <div *ngFor="let movie of similar | slice:0:5 " class="col">
-        <div [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active" class="img-container">
-            <img class="img-film" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto"
+    <div *ngFor="let item of similar | slice:0:5 " class="col">
+        <div [routerLink]="['/details',item.type,item.id]" routerLinkActive="router-link-active" class="img-container">
+            <img class="img-film" src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}" width="auto"
                 height="100px">
         </div>
         <!-- <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie.title" width="auto" height="200px"
         [routerLink]="['/details',movie.id]" routerLinkActive="router-link-active"> -->
-        <p class="title"> {{movie.title}}</p>
+        <p class="title" *ngIf="item.title"> {{ item.title }}</p>
+        <p class="title" *ngIf="item.name"> {{ item.name }}</p>
     </div>
 </div>
 

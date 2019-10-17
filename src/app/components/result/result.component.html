@@ -1,4 +1,4 @@
-<div class="album py-5">
+<div *ngIf="results != []" class="album py-5">
     <div class="container">
         <div class="row">
             <div *ngFor="let result of results" class="col-md-3" style="padding: 0;">
@@ -7,3 +7,4 @@
         </div>
     </div>
 </div>
+<h1 *ngIf="results.length === 0" >Nothing found...</h1>

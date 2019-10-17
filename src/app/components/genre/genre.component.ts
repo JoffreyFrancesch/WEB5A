@@ -33,6 +33,7 @@ export class GenreComponent implements OnInit {
             this.maxpage = res.total_pages;
             res.results.forEach(element => {
               if ( element.poster_path != null) {
+                element.type = "tvshows";
                 this.list.push(element);
               }
             });
@@ -48,6 +49,7 @@ export class GenreComponent implements OnInit {
             this.maxpage = res.total_pages;
             res.results.forEach(element => {
               if (element.poster_path != null) {
+                element.type = "movies";
                 this.list.push(element);
               }
             });

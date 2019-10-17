@@ -13,6 +13,7 @@ export interface ODiscoverShows {
 }
 
 export interface DMovie {
+  type?: string;
   poster_path?: string;
   adult?: boolean;
   overview?: string;
@@ -30,6 +31,7 @@ export interface DMovie {
 }
 
 export interface DShow {
+  type?: string;
   poster_path?: string;
   popularity?: number;
   id?: number;

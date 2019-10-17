@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, TestabilityRegistry } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
-import { Similar, OSimilar } from 'src/app/interfaces/similar';
+import { Similar, OSimilar, SimilarTv } from 'src/app/interfaces/similar';
+import { TvShowsService } from 'src/app/services/tv-shows.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-similar',
@@ -9,21 +11,35 @@ import { Similar, OSimilar } from 'src/app/interfaces/similar';
 })
 export class SimilarComponent implements OnInit, OnChanges {
   @Input() id: number;
-  similar: Similar[] = [];
+  @Input() type: string;
 
-  constructor(private movieService: MoviesService) { }
+  similar: Similar[] | SimilarTv[] = [];
+
+  constructor(private movieService: MoviesService, private tvService: TvShowsService) { }
 
   ngOnInit() {
     this.loadSimilar();
   }
 
   loadSimilar() {
-    this.movieService.getSimilar(this.id).subscribe((res: OSimilar) => {
-      const data = res.results;
-      data.forEach(element => {
-        this.similar.push(element);
+    if (this.type === 'movie') {
+      this.movieService.getSimilar(this.id).subscribe((res: OSimilar) => {
+        const data = res.results;
+        data.forEach(element => {
+          element.type = 'movies';
+          this.similar.push(element);
+        });
       });
-    });
+    } else if (this.type === 'tv') {
+      this.tvService.getSimilar(this.id).subscribe(res => {
+        const data = res.results;
+        data.forEach(element => {
+          element.type = 'tvshows';
+          this.similar.push(element);
+        })
+      })
+    }
+
   }
 
   ngOnChanges() {

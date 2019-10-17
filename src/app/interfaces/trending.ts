@@ -1,4 +1,5 @@
 export interface Trending {
+  type?: string;
   poster_path?: string;
   adult?: boolean;
   overview?: string;

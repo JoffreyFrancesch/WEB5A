@@ -12,10 +12,10 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) { }
 
-  searchMovie(query: string): Observable<OMovieSearch> {
+  searchMovie(query: string): Observable<any> {
     const params = new HttpParams().set('api_key', this.apiKey).set('query', query);
-    const url = this.baseUrl + '/multi';
-    return this.httpClient.get<OMovieSearch>(url, {params});
+    const url = this.baseUrl + '/movie';
+    return this.httpClient.get<any>(url, {params});
   }
 
 

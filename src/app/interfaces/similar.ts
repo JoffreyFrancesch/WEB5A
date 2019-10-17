@@ -1,4 +1,5 @@
 export interface Similar {
+  type?: string;
   poster_path?: string;
   adult?: boolean;
   overview?: string;
@@ -17,7 +18,24 @@ export interface Similar {
 
 export interface OSimilar {
   page: number;
-  results: Similar[];
+  results: Similar[] | SimilarTv[];
   total_pages: number;
   total_results: number;
+}
+
+export interface SimilarTv {
+  type?: string;
+  poster_path?: string;
+popularity?: number;
+id?: number;
+backdrop_path?: string;
+vote_average?: number;
+overview?: string;
+first_air_date?: string;
+origin_country?: string[];
+genre_ids: number[];
+original_language?: string;
+vote_count?: number;
+name?: string;
+original_name?: string;
 }
