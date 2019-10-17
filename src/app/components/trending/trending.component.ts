@@ -16,7 +16,7 @@ export class TrendingComponent implements OnInit {
     this.trendingService.getTrendingDay('movie').subscribe((res: OTrending) => {
       const data = res.results;
       data.forEach(element => {
-        element.type = "movie";
+        element.type = 'movies';
         this.trending.push(element);
       });
     });
